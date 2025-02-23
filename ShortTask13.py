@@ -14,21 +14,30 @@ b=int(input("How many symbols do you want : "))
 c=int(input("How many numbers do you want : "))
 
 password=""
-
+lis=[]
 
 for char in range(a):
-    d=str(random.choice(letter)) 
+    d=str(random.choice(letter))
+    lis.append(d)
     password=password+d
 
     
 for char in range(b):
     e=str(random.choice(symbol))
+    lis.append(e)
     password=password+e
 
     
 for char in range(c):
-    f=str(random.choice(nums)) 
+    f=str(random.choice(nums))
+    lis.append(f)
     password=password+f
 
 
-print("your password is : ",password)
+random.shuffle(lis)
+newpass=''
+for i in range(len(password)):
+    newpass=newpass+lis[i]
+
+
+print("your password is : ",newpass)
