@@ -103,6 +103,9 @@ def game():
     while not cond:
         guess=input('Guess a letter : ').upper()
         
+        if guess in display:
+            print(f'YOU HAVE ALREDY GUESSED THE LETTER "{guess}"')
+        
         for position in range(word_length):
             if guess == country[position]:
                 display[position]=guess
