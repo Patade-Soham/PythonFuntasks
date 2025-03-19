@@ -1,4 +1,3 @@
-
 import random
 conti=False
 def game():
