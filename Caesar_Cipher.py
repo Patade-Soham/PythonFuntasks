@@ -33,8 +33,7 @@ while cond==True:
 
     text=input('Type your message :\n').lower()
     shift=int(input('Give the shift number :\n'))
-    if shift>26:
-        shift=shift%25
+    shift=shift%25
     ceaser(Plain_text=text, shift_num=shift)
     a=input('Do you want to go again type "yes".Otherwise "no" : ').lower()
     if a=='no':
