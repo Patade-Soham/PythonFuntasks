@@ -1,5 +1,6 @@
 
 def leap_year(year):
+    '''It verifies the year is leap year or not.'''
     b=year/4
     c=year/100
     d=year/400
@@ -18,6 +19,7 @@ def leap_year(year):
       return False
   
 def Day_in_month(month):
+    '''It retruns the number of days in a month of specific year.'''
     months_days=[31,28,31,30,31,30,31,31,30,31,30,31]
     if leap_year(year)==False:
         days=months_days[month - 1]
@@ -36,3 +38,6 @@ month=int(input('Enter number of month : '))
 number_of_days=Day_in_month(month)      
 print(number_of_days) 
   
+
+
+
