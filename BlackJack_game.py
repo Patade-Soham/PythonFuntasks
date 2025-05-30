@@ -1,79 +1,83 @@
-#import random
+import random
 
-# def blackjack():
+def blackjack():
     
-#     deck = [11,2,3,4,5,6,7,8,9,10,10,10,10]
-#     player=[]
-#     computer=[]
-#     for i in range(2):
-#          player.append(random.choice(deck))
-#          computer.append(random.choice(deck))
-#     print( 'YOUR cards are',player)
-#     print('one of  his card is ',computer[0])
-#     player_hand_value=player[0]+player[1]
-#     comp_hand_value=computer[0]+computer[1]
+     deck = [11,2,3,4,5,6,7,8,9,10,10,10,10]
+     player=[]
+     computer=[]
+     for i in range(2):
+          player.append(random.choice(deck))
+          computer.append(random.choice(deck))
+     print( 'YOUR cards are',player)
+     print('one of  his card is ',computer[0])
+     player_hand_value=player[0]+player[1]
+     comp_hand_value=computer[0]+computer[1]
     
-#     play=input('Do you want to hit or stand : ').lower()
+     play=input('Do you want to hit or stand : ').lower()
     
-#     if play=='stand':
+     if play=='stand':
         
-#             if player_hand_value > comp_hand_value:
-#                 print('You win')
-#             elif player_hand_value < comp_hand_value:
-#                 print('Dealer wins')
-#             elif player_hand_value==comp_hand_value:
-#                 print('draw')
+             if player_hand_value > comp_hand_value:
+                 print('You win')
+             elif player_hand_value < comp_hand_value:
+                 print('Dealer wins')
+             elif player_hand_value==comp_hand_value:
+                 print('draw')
             
-#     elif play=='hit':
-#         player.append(random.choice(deck))
-#         player_hand_value = player_hand_value+player[2]
-#         print('Your hand is ',player)
-#         if comp_hand_value < 17:
-#             print('Dealer also hits')
-#             computer.append(random.choice(deck))
-#             comp_hand_value = comp_hand_value + computer[2]
-#             print("Dealer's hand is ",computer)
-#             if player_hand_value < 22 and comp_hand_value < 22:
-#                 if player_hand_value > comp_hand_value:
-#                     print('You win')
-#                 elif player_hand_value < comp_hand_value:
-#                     print('Dealer wins')
-#                 elif player_hand_value==comp_hand_value:
-#                     print('draw')
+     elif play=='hit':
+         player.append(random.choice(deck))
+         player_hand_value = player_hand_value+player[2]
+         if player_hand_value > 21 and 11  in player :
+                 player_hand_value= player_hand_value-10
+         print('Your hand is ',player)
+         if comp_hand_value < 17:
+             print('Dealer also hits')
+             computer.append(random.choice(deck))
+             comp_hand_value = comp_hand_value + computer[2]
+             if comp_hand_value > 21 and 11  in computer :
+                 comp_hand_value= comp_hand_value-10
+             
+             print("Dealer's hand is ",computer)
+             if player_hand_value < 22 and comp_hand_value < 22:
+                 if player_hand_value > comp_hand_value:
+                     print('You win')
+                 elif player_hand_value < comp_hand_value:
+                     print('Dealer wins')
+                 elif player_hand_value==comp_hand_value:
+                     print('draw')
     
-#             elif comp_hand_value > 21:
-#                 if player_hand_value > 21:
-#                     print('draw')
-#                 else:
-#                     print('you win')
-#             elif player_hand_value > 21:
-#                 if comp_hand_value < 22:
-#                     print('dealer win')
+             elif comp_hand_value > 21:
+                 if player_hand_value > 21:
+                     print('draw')
+                 else:
+                     print('you win')
+             elif player_hand_value > 21:
+                 if comp_hand_value < 22:
+                     print('dealer win')
                 
                 
-#         elif comp_hand_value > 17:
-#             print('Dealer chooses to stand')
-#             print('Your hand is ',player)
+         elif comp_hand_value > 17:
+             print('Dealer chooses to stand')
+             print('Your hand is ',player)
             
-#             if player_hand_value < 22 :
-#                 if player_hand_value > comp_hand_value:
-#                     print('You win')
-#                 elif player_hand_value < comp_hand_value:
-#                     print('Dealer wins')
-#                 elif player_hand_value==comp_hand_value:
-#                     print('draw')
-#             elif player_hand_value > 21 :
-#                 print('Dealer Wins')
+             if player_hand_value < 22 :
+                 if player_hand_value > comp_hand_value:
+                     print('You win')
+                 elif player_hand_value < comp_hand_value:
+                     print('Dealer wins')
+                 elif player_hand_value==comp_hand_value:
+                     print('draw')
+             elif player_hand_value > 21 :
+                 print('Dealer Wins')
 
 
 
-# while True:
-#     run=input('Play or Exit :').lower()
-#     if run == 'play' :
-#         blackjack()
-#     else:
-#         break
-
+while True:
+     run=input('Play or Exit :').lower()
+     if run == 'play' :
+         blackjack()
+     else:
+         break
 # modified code
 import random
 import os
