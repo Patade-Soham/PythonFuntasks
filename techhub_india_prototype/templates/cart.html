@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <h1 class="text-3xl font-bold">Cart (Escrow Demo)</h1>
+  <div class="mt-6 space-y-4">
+    {% for i in items %}
+    <div class="p-4 rounded-xl border bg-white flex items-center justify-between">
+      <div>
+        <div class="text-xs uppercase text-slate-500">{{ i.kind }}</div>
+        <div class="font-semibold">{{ i.name }}</div>
+      </div>
+      <div class="font-bold">₹{{ '%.0f'|format(i.price) }}{% if i.kind == 'rental' %}/day{% endif %}</div>
+    </div>
+    {% else %}
+    <div class="text-slate-500">Your cart is empty.</div>
+    {% endfor %}
+  </div>
+  {% if items %}
+  <div class="mt-6 p-4 rounded-xl border bg-white flex items-center justify-between">
+    <div class="text-slate-600">Subtotal</div>
+    <div class="font-bold">₹{{ '%.0f'|format(total) }}</div>
+  </div>
+  <div class="mt-6">
+    <a href="{{ url_for('checkout') }}" class="px-5 py-3 rounded-xl bg-indigo-600 text-white">Proceed to Checkout</a>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}
