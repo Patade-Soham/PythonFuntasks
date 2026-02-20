@@ -5,7 +5,7 @@ from products import PRODUCTS, CATEGORIES
 app = Flask(__name__)
 app.secret_key = "change-this-in-production"  # required for session
 
-# ---------- Helpers ----------
+
 def _get_cart():
     cart = session.get("cart", {})
     # cart structure: { product_id(str): quantity(int), ... }
@@ -125,3 +125,4 @@ def api_cart():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
